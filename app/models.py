@@ -67,7 +67,7 @@ class User(AbstractUser):
     updated = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["name","phone", "password"]
+    REQUIRED_FIELDS = ["first_name","phone", "password"]
 
     objects = UserManager()
     
@@ -83,7 +83,6 @@ class Expense(models.Model):
 
 class Budget(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
     category = models.CharField(max_length=40)
     amount = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     

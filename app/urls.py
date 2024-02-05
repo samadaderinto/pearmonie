@@ -2,7 +2,9 @@ from django.urls import path
 
 from app.views import (
     BudgetViewSet,
+    BudgetsViewSet,
     ExpenseViewSet,
+    ExpensesViewSet,
     Logout,
     Login,
     register,
@@ -19,7 +21,11 @@ urlpatterns = [
     path('login/refresh/',
          TokenRefreshView.as_view(), name='token_refresh'),
     
-    path("users/expenses/", ExpenseViewSet.as_view(), name="expense"),
-    path("users/budget/", BudgetViewSet.as_view(), name="budget")
+    path("users/expense/", ExpenseViewSet.as_view(), name="expense"),
+    path("users/expense/all/", ExpensesViewSet.as_view(), name="expenses"),
+    
+    path("users/budget/", BudgetViewSet.as_view(), name="budget"),
+    path("users/budget/all/", BudgetsViewSet.as_view(), name="budgets"),
+    
 
 ]

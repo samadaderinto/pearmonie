@@ -18,7 +18,9 @@ class AccessPolicies(AccessPolicy):
             "action": [
                 "Logout",
                 "BudgetViewSet",
-                "ExpenseViewSet"
+                "ExpenseViewSet",
+                "ExpensesViewSet",
+                "BudgetsViewSet"
                 
                
             ],

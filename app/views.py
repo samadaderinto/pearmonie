@@ -43,7 +43,7 @@ class ExpenseViewSet(GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         data = request.data
-        budget = Budget.objects.get(user=data.get("user"))
+        budget = Budget.objects.get(user=data.get("user"), category=request.data.get("category"))
         amount = data.get("amount")
         serializer = ExpenseSerializer(data=data)
         
@@ -60,13 +60,13 @@ class ExpenseViewSet(GenericAPIView):
     
     def get(self, request, *args, **kwargs):
       
-        expense = get_object_or_404(Expense,user=request.data.get("user"))
+        expense = get_object_or_404(Expense,user=request.data.get("user"), category=request.data.get("category"))
         serializer = ExpenseSerializer(expense)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
     def update(self, request, *args, **kwargs):
         data = request.data
-        expense = get_object_or_404(Expense,user=data.get("user"))
+        expense = get_object_or_404(Expense,user=data.get("user"),category=request.data.get("category"))
         serializer = ExpenseSerializer(expense, data=data)
         if serializer.is_valid():
            serializer.save()
@@ -74,17 +74,19 @@ class ExpenseViewSet(GenericAPIView):
     
     def delete(self, request, *args, **kwargs):
        
-        expense = get_object_or_404(Expense,user=request.data.get("user"))
+        expense = get_object_or_404(Expense,user=request.data.get("user"), category=request.data.get("category"))
         expense.delete()
         return Response(status=status.HTTP_202_ACCEPTED)
     
-    def list(self, request, *args, **kwargs):
+     
+        
+class ExpensesViewSet(GenericAPIView):
+       def get(self, request, *args, **kwargs):
 
         expenses = Expense.objects.filter(
             user=request.data.get("user"))
         serializer = ExpenseSerializer(expenses, many=True)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)   
-        
+        return Response(serializer.data, status=status.HTTP_201_CREATED)  
     
 class BudgetViewSet(GenericAPIView):
     permission_classes = (AccessPolicies,)
@@ -100,13 +102,13 @@ class BudgetViewSet(GenericAPIView):
     
     def get(self, request, *args, **kwargs):
 
-        expense = get_object_or_404(Budget,user=request.data.get("user"))
+        expense = get_object_or_404(Budget,user=request.data.get("user"),category=request.data.get("category"))
         serializer = BudgetSerializer(expense)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
     def update(self, request, *args, **kwargs):
         data = request.data
-        expense = get_object_or_404(Budget,user=request.data.get("user"))
+        expense = get_object_or_404(Budget,user=request.data.get("user"),category=request.data.get("category"))
         serializer = BudgetSerializer(expense, data=data)
         if serializer.is_valid():
            serializer.save()
@@ -115,11 +117,19 @@ class BudgetViewSet(GenericAPIView):
     
     def delete(self, request, *args, **kwargs):
        
-        expense = get_object_or_404(Budget,user=request.data.get("user"))
+        expense = get_object_or_404(Budget,user=request.data.get("user"), id=request.data.get("user"),category=request.data.get("category"))
         expense.delete()
         return Response(status=status.HTTP_202_ACCEPTED)
     
-              
+     
+    
+class BudgetsViewSet(GenericAPIView):   
+    def get(self, request, *args, **kwargs):
+
+        expenses = Budget.objects.filter(
+            user=request.data.get("user"))
+        serializer = BudgetSerializer(expenses, many=True)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)            
         
 class Logout(GenericAPIView):
     permission_classes = (AccessPolicies,)
