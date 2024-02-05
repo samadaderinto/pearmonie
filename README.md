@@ -47,8 +47,13 @@
       }
      ```
 
-   
-   path('logout/', Logout.as_view(), name='logout')
+
+ * Endpoint 3: /api/logout/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response: None
+     
    path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh')
      
    path("users/expense/", ExpenseViewSet.as_view(), name="expense")
