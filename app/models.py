@@ -59,7 +59,6 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     username = None
     first_name = models.CharField(max_length=30)
-    
     email = models.EmailField(unique=True)
     phone = PhoneNumberField(region="US")
     password = models.CharField(max_length=90)
@@ -83,6 +82,6 @@ class Expense(models.Model):
 
 class Budget(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.CharField(max_length=40)
+    category = models.CharField(max_length=40, unique=True)
     amount = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     

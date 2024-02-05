@@ -43,7 +43,7 @@ class ExpenseViewSet(GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         data = request.data
-        budget = Budget.objects.get(user=data.get("user"), category=request.data.get("category"))
+        budget = get_object_or_404(Budget, user=data.get("user"), category=request.data.get("category"))
         amount = data.get("amount")
         serializer = ExpenseSerializer(data=data)
         
@@ -55,14 +55,14 @@ class ExpenseViewSet(GenericAPIView):
                 Response({"message": "Insufficient Balance"}, status=status.HTTP_400_BAD_REQUEST)
         
             serializer.save()
-            return Response(status=status.HTTP_202_ACCEPTED)
+            return Response(status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_400_BAD_REQUEST)
     
     def get(self, request, *args, **kwargs):
       
         expense = get_object_or_404(Expense,user=request.data.get("user"), category=request.data.get("category"))
         serializer = ExpenseSerializer(expense)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def update(self, request, *args, **kwargs):
         data = request.data
@@ -73,7 +73,7 @@ class ExpenseViewSet(GenericAPIView):
         return Response(status=status.HTTP_202_ACCEPTED)
     
     def delete(self, request, *args, **kwargs):
-       
+    
         expense = get_object_or_404(Expense,user=request.data.get("user"), category=request.data.get("category"))
         expense.delete()
         return Response(status=status.HTTP_202_ACCEPTED)
@@ -86,7 +86,7 @@ class ExpensesViewSet(GenericAPIView):
         expenses = Expense.objects.filter(
             user=request.data.get("user"))
         serializer = ExpenseSerializer(expenses, many=True)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)  
+        return Response(serializer.data, status=status.HTTP_200_OK)  
     
 class BudgetViewSet(GenericAPIView):
     permission_classes = (AccessPolicies,)
@@ -96,7 +96,7 @@ class BudgetViewSet(GenericAPIView):
         serializer = BudgetSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(status=status.HTTP_202_ACCEPTED)
+            return Response(status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_400_BAD_REQUEST)
         
     
@@ -104,7 +104,7 @@ class BudgetViewSet(GenericAPIView):
 
         expense = get_object_or_404(Budget,user=request.data.get("user"),category=request.data.get("category"))
         serializer = BudgetSerializer(expense)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     def update(self, request, *args, **kwargs):
         data = request.data
@@ -129,7 +129,7 @@ class BudgetsViewSet(GenericAPIView):
         expenses = Budget.objects.filter(
             user=request.data.get("user"))
         serializer = BudgetSerializer(expenses, many=True)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)            
+        return Response(serializer.data, status=status.HTTP_200_OK)            
         
 class Logout(GenericAPIView):
     permission_classes = (AccessPolicies,)

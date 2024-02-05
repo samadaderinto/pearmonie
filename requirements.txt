@@ -10,3 +10,5 @@ djangorestframework-simplejwt
 PyJWT==2.1.0
 django-dotenv
 drf-access-policy
+
+
