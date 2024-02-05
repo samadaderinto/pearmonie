@@ -48,14 +48,14 @@
      ```
 
 
- * Endpoint 3: /api/logout/
+   * Endpoint 3: /api/logout/
    * Method: POST
    * Description: Retrieve a list of resources.
    * Request: None
    * Response: None
 
 
- * Endpoint 4: /api/login/refresh/
+   * Endpoint 4: /api/login/refresh/
    * Method: POST
    * Description: Retrieve a list of resources.
    * Request: None
@@ -67,7 +67,7 @@
       }
      ```
 
-* Endpoint 5: /api/user/expense/
+   * Endpoint 5: /api/user/expense/
    * Method: POST
    * Description: Retrieve a list of resources.
    * Request: None
@@ -79,7 +79,7 @@
       }
      ```
      
- * Endpoint 6: /api/user/expense/all/
+   * Endpoint 6: /api/user/expense/all/
    * Method: POST
    * Description: Retrieve a list of resources.
    * Request: None
@@ -90,7 +90,7 @@
           "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
       } 
      
- * Endpoint 7: /api/user/budget/
+   * Endpoint 7: /api/user/budget/
    * Method: POST
    * Description: Retrieve a list of resources.
    * Request: None
@@ -100,7 +100,9 @@
      {
           "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
       }
- * Endpoint 7: /api/user/budget/all/
+
+     
+   * Endpoint 8: /api/user/budget/all/
    * Method: POST
    * Description: Retrieve a list of resources.
    * Request: None
