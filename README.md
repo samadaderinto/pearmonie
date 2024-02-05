@@ -3,11 +3,13 @@
 
 1. [Installation](#installation)
    - To install required libraries and dependencies. run:
+      m 
    ```
    pip install -r requirements.txt
    ```
 2. [Usage](#usage)
    - To run the project(start the server), you run the following code:
+     
    ```
    python manage.py runserver
    ```
