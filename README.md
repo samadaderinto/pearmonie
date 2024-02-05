@@ -45,7 +45,7 @@
        "phone": "+2349021162144",
        "created": "2024-02-05T11:42:37.269971Z",
        "updated": "2024-02-05T11:42:37.269996Z"
-        }
+     }
      ```
 
    * Endpoint 2: /api/login/
@@ -64,7 +64,7 @@
      {
           "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJ dummy qdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk",
           "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      }
+     }
      ```
 
 
@@ -74,7 +74,7 @@
    * Request:
      ```
      {
-       "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJqdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk"
+     "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJqdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk"
      }
      ```
    * Response: None
@@ -85,65 +85,68 @@
    * Description: Retrieve a list of resources.
    * Request:
      ```
-                 {
-                      "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJqdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk"
-                 }
+     {
+     "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJqdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk"
+     }
      ```
    * Response:
 
      ```
      {
-          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      }
+     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+     }
      ```
 
    * Endpoint 5: /api/user/expense/
    * Method: POST
-   * Description: Retrieve a list of resources.
-   * Request: None
-   * Response:
+   * Request: 
+   * Response: None
 
-     ```
-     {
-          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      }
-     ```
+    
      
    * Endpoint 6: /api/user/expense/all/
-   * Method: POST
-   * Description: Retrieve a list of resources.
+   * Method: GET
    * Request: None
    * Response:
 
      ```
-     {
-          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      }
+     [{"id":2,"user":1,"category":"oojjpo","amount":900, date: 2024-02-06},{"id":3,"user":1,"category":"oopjo","amount":900, date: 2024-02-05}]
      ```
      
    * Endpoint 7: /api/user/budget/
    * Method: POST
    * Description: Retrieve a list of resources.
-   * Request: None
-   * Response:
-
+   * Request:
      ```
      {
-          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      }
+  
+       "user": 1,
+       "category": "oopoq",
+       "amount": 900
+     }
      ```
+   * Response: None
 
      
    * Endpoint 8: /api/user/budget/all/
-   * Method: POST
+   * Method: GET
    * Description: Retrieve a list of resources.
    * Request: None
    * Response:
 
      ```
+     [
      {
-          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      }
+     "id":2,
+     "user":1,
+     "category":"oorrpo",
+     "amount":900
+     },
+     {"id":3,
+     "user":1,
+     "category":"oopro",
+     "amount":900
+     }]
    ```
 
    
