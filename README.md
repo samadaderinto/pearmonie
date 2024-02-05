@@ -2,21 +2,25 @@
 
 
 1. [Installation](#installation)
-   To install required libraries and dependencies. run:
+   - To install required libraries and dependencies. run:
    ```
    pip install -r requirements.txt
    ```
 2. [Usage](#usage)
-   To run the project(start the server), you run the following code:
+   - To run the project(start the server), you run the following code:
    ```
    python manage.py runserver
    ```
   
 3. [Authentication](#authentication)
-   
+   - This project uses Token-based authentication (jwt tokens). Tokens will 
+   generated on client signup/login and sent to the client, which is send 
+   periodically to the server.
+
 
      
 5. [API Endpoints](#api-endpoints)
+   
    * Endpoint 1: /api/register/
    * Method: POST
    * Description: Retrieve a list of resources.
@@ -88,7 +92,8 @@
      ```
      {
           "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
-      } 
+      }
+     ```
      
    * Endpoint 7: /api/user/budget/
    * Method: POST
@@ -100,6 +105,7 @@
      {
           "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
       }
+     ```
 
      
    * Endpoint 8: /api/user/budget/all/
@@ -114,7 +120,9 @@
       }
    ```
 
-6. [Database Models](#database-models)
+   
+
+7. [Database Models](#database-models)
    
    ```
    class User(AbstractUser):
@@ -138,7 +146,6 @@
        description = models.TextField(max_length=60)
        amount = models.IntegerField(validators=[MinValueValidator(1)])
        date = models.DateTimeField(auto_now_add=True)
-       
    
    
    class Budget(models.Model):
@@ -146,4 +153,58 @@
        category = models.CharField(max_length=40)
        amount = models.IntegerField(default=0, validators=[MinValueValidator(0)])
    ```
-       
+
+8. [Permissions](#permissions)
+  - This library brings a declaritive, organized approach to managing access control in Django REST Framework projects. Each ViewSet or function-based view can be assigned an explicit policy for the exposed resources. No more digging through views or seralizers to understand access logic -- it's all in one place in a format that less technical stakeholders can understand. If you're familiar with other declaritive access models, such as AWS' IAM, the syntax will be familiar.
+
+   ```
+   statements = [
+        {
+            "action": ["list", "retrieve"],
+            "principal": "*",
+            "effect": "allow"
+        },
+        {
+            "action": ["publish", "unpublish"],
+            "principal": ["group:editor"],
+            "effect": "allow"
+        }]
+
+   ```
+
+   Example from this code snippet:
+   ```
+   from rest_access_policy import AccessPolicy
+
+
+   # all views with permitted users in json
+   
+   
+   class AccessPolicies(AccessPolicy):
+       statements = [
+           {
+               "action": [
+                   "register",
+                   "Login",
+               ],
+               "principal": "*",
+               "effect": "allow",
+           },
+           {
+               "action": [
+                   "Logout",
+                   "BudgetViewSet",
+                   "ExpenseViewSet",
+                   "ExpensesViewSet",
+                   "BudgetsViewSet"
+                   
+                  
+               ],
+               "principal": ["authenticated"],
+               "effect": "allow"
+           },
+          
+       ]
+   
+   ```
+          
