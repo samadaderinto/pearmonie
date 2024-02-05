@@ -53,14 +53,63 @@
    * Description: Retrieve a list of resources.
    * Request: None
    * Response: None
+
+
+ * Endpoint 4: /api/login/refresh/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
+
+     ```
+     {
+          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+      }
+     ```
+
+* Endpoint 5: /api/user/expense/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
+
+     ```
+     {
+          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+      }
+     ```
      
-   path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh')
+ * Endpoint 6: /api/user/expense/all/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
+
+     ```
+     {
+          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+      } 
      
-   path("users/expense/", ExpenseViewSet.as_view(), name="expense")
-   path("users/expense/all/", ExpensesViewSet.as_view(), name="expenses")
-     
-   path("users/budget/", BudgetViewSet.as_view(), name="budget")
-   path("users/budget/all/", BudgetsViewSet.as_view(), name="budgets")
+ * Endpoint 7: /api/user/budget/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
+
+     ```
+     {
+          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+      }
+ * Endpoint 7: /api/user/budget/all/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
+
+     ```
+     {
+          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+      }
    ```
 
 6. [Database Models](#database-models)
