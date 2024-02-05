@@ -12,11 +12,28 @@
    python manage.py runserver
    ```
   
-     
-4. [API Endpoints](#api-endpoints)
+3. [Authentication](#authentication)
    
-   ```
-   path('register/', register, name="register")
+
+     
+5. [API Endpoints](#api-endpoints)
+   * Endpoint 1: /api/register/
+     Method: POST
+     Description: Retrieve a list of resources.
+     Request: None
+     Response:
+
+     ```
+     {
+       "id": 1,
+       "email": "samd@gmail.com",
+       "first_name": "samaad",
+       "phone": "+2349021162144",
+       "created": "2024-02-05T11:42:37.269971Z",
+       "updated": "2024-02-05T11:42:37.269996Z"
+        }
+     ```
+
    path('login/', Login.as_view(), name='login')
    
    path('logout/', Logout.as_view(), name='logout')
@@ -29,7 +46,7 @@
    path("users/budget/all/", BudgetsViewSet.as_view(), name="budgets")
    ```
 
-5. [Database Models](#database-models)
+6. [Database Models](#database-models)
    
    ```
    class User(AbstractUser):
