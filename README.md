@@ -18,10 +18,10 @@
      
 5. [API Endpoints](#api-endpoints)
    * Endpoint 1: /api/register/
-     Method: POST
-     Description: Retrieve a list of resources.
-     Request: None
-     Response:
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
 
      ```
      {
@@ -34,7 +34,19 @@
         }
      ```
 
-   path('login/', Login.as_view(), name='login')
+   * Endpoint 2: /api/login/
+   * Method: POST
+   * Description: Retrieve a list of resources.
+   * Request: None
+   * Response:
+
+     ```
+     {
+          "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJ dummy qdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk",
+          "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3Mzk2NDQ2LCJpYXQiOjE3MDcxMzcyNDYsImp0aSI6 dummy IjEwMGRjNDc2NTE2MDRkZDBhMWQ1NTdlYmM2YmEwYzQyIiwidXNlcl9pZCI6MX0.m169D0RoesCZMjrOMWoIYvIv6b5iw_ySUygU1Bd_hQY"
+      }
+     ```
+
    
    path('logout/', Logout.as_view(), name='logout')
    path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh')
