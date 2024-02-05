@@ -64,7 +64,7 @@ class ExpenseViewSet(GenericAPIView):
         serializer = ExpenseSerializer(expense)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-    def update(self, request, *args, **kwargs):
+    def put(self, request, *args, **kwargs):
         data = request.data
         expense = get_object_or_404(Expense,user=data.get("user"),category=request.data.get("category"))
         serializer = ExpenseSerializer(expense, data=data)
@@ -106,7 +106,7 @@ class BudgetViewSet(GenericAPIView):
         serializer = BudgetSerializer(expense)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-    def update(self, request, *args, **kwargs):
+    def put(self, request, *args, **kwargs):
         data = request.data
         expense = get_object_or_404(Budget,user=request.data.get("user"),category=request.data.get("category"))
         serializer = BudgetSerializer(expense, data=data)
