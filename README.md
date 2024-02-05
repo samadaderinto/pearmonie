@@ -26,7 +26,15 @@
    * Endpoint 1: /api/register/
    * Method: POST
    * Description: Retrieve a list of resources.
-   * Request: None
+   * Request:
+     ```
+     {
+       "email": "samd@gmail.com",
+       "phone": "+2349021162144",
+       "password": "HardPass@2022",
+       "first_name": "samaad"
+     }
+     ```
    * Response:
 
      ```
@@ -43,7 +51,13 @@
    * Endpoint 2: /api/login/
    * Method: POST
    * Description: Retrieve a list of resources.
-   * Request: None
+   * Request:
+      ```
+      {
+       "email": "a@gmail.com",
+       "password": "HardPass@2022"
+      }
+      ```
    * Response:
 
      ```
@@ -57,14 +71,24 @@
    * Endpoint 3: /api/logout/
    * Method: POST
    * Description: Retrieve a list of resources.
-   * Request: None
+   * Request:
+     ```
+     {
+       "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJqdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk"
+     }
+     ```
    * Response: None
 
 
    * Endpoint 4: /api/login/refresh/
    * Method: POST
    * Description: Retrieve a list of resources.
-   * Request: None
+   * Request:
+     ```
+                 {
+                      "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNzc0MjA0NiwiaWF0IjoxNzA3MTM3MjQ2LCJqdGkiOiJhNTU1Y2JlZmExMmY0ZmU3ODc2MDIxYzRiZjg0OWJmNCIsInVzZXJfaWQiOjF9.wFY2h1WZTiSqogGi1s7WyJ0BM4WhoAxVFXL86ovPVyk"
+                 }
+     ```
    * Response:
 
      ```
